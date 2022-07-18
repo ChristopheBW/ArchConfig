@@ -1,0 +1,10 @@
+set font "SpaceMono Nerd Font 14"
+
+set selection-clipboard clipboard
+
+set guioptions none
+set adjust-open "best-fit"
+set window-title-basename true
+
+map <Space> scroll half-down
+map <S-Space> scroll half-up
