@@ -131,6 +131,9 @@ func! CompileRunGcc()
         exec 'te clang++ % -o %< && ./%< ; rm %<'
         exec 'startinsert'
         "exec 'te time ./%<'
+    elseif &filetype == 'rust'
+        exec 'te rustc % && ./%< ; rm %<'
+        exec 'startinsert'
     elseif &filetype == 'java'
         exec 'te javac % && java %< ; rm *.class'
         exec 'startinsert'
@@ -152,6 +155,9 @@ func! CompileRunGcc()
 endfunc
 
 :tnoremap <Esc> <C-\><C-n>
+
+noremap <Leader>yg :%y+<CR>
+noremap <Leader>yy "+y<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
