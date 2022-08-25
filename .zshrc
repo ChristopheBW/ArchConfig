@@ -1,3 +1,8 @@
+# --INIT--
+# sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+# --END--
+#
 # if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
 #   exec startx
 # fi
@@ -181,6 +186,8 @@ alias postgresqlstart='sh /home/christophe/.scripts/wsl_postgres.sh'
 alias wakeup='eog /home/christophe/Pictures/QR_Start.png'
 alias ns='neofetch && startx'
 alias nvidia-tf='for a in /sys/bus/pci/devices/0000:01:00.0/; do echo 0 | sudo tee -a $a/numa_node; done'
+alias aptupgrade='sudo apt update && sudo apt upgrade && sudo apt dist-upgrade'
+alias temp='/usr/bin/vcgencmd measure_temp'
 #alias reconnect='sudo nmcli device disconnect enp0s17 && sudo nmcli connection up uuid ba40356c-939f-36a4-b87b-bd7d81ea6c33'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
