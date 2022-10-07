@@ -32,7 +32,7 @@ ZLE_RPROMPT_INDENT=0
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/christophe/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 # export GPG_TTY=$(tty)
 #eval `opam config env`
 
@@ -176,19 +176,11 @@ alias tt='taskwarrior-tui'
 alias vim="nvim"
 alias vi='nvim'
 alias rmclass="rm *.class"
-alias gpush='git add . && git commit -S -m "Sync" && git push'
-alias hg='cd /home/christophe/Github/blog && hexo clean && hexo g && hexo d && git pull && git add . && git commit -m "Sync" && git push'
-alias hs='cd /home/christophe/Github/blog && hexo clean && hexo g && hexo s'
+alias gpush='git add . && git commit -m "Sync" && git push'
+alias hg='cd $HOME/blog && python3 HexoSourceSync.py && hexo clean && hexo g && hexo d && git pull && git add . && git commit -m "Sync" && git push'
+alias hs='cd $HOME/blog && hexo clean && hexo g && hexo s && git pull && git add . && git commit -m "Sync" && git push'
 alias weather='curl "wttr.in/Ottawa?Fpq"'
-alias zathura='zathura --mode fullscreen'
-alias v2raystart='sudo systemctl start v2ray graftcp-local'
-alias postgresqlstart='sh /home/christophe/.scripts/wsl_postgres.sh'
-alias wakeup='eog /home/christophe/Pictures/QR_Start.png'
-alias ns='neofetch && startx'
-alias nvidia-tf='for a in /sys/bus/pci/devices/0000:01:00.0/; do echo 0 | sudo tee -a $a/numa_node; done'
-alias aptupgrade='sudo apt update && sudo apt upgrade && sudo apt dist-upgrade'
-alias temp='/usr/bin/vcgencmd measure_temp'
-#alias reconnect='sudo nmcli device disconnect enp0s17 && sudo nmcli connection up uuid ba40356c-939f-36a4-b87b-bd7d81ea6c33'
+alias aptupgrade='sudo apt update && sudo apt upgrade'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -196,3 +188,4 @@ alias temp='/usr/bin/vcgencmd measure_temp'
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+

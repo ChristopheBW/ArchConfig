@@ -100,12 +100,13 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
 Plug 'terryma/vim-smooth-scroll'
-Plug 'stevearc/vim-arduino'
+" Plug 'stevearc/vim-arduino'
 Plug 'ap/vim-css-color'
 Plug 'sbdchd/neoformat'
 Plug 'tomtom/tcomment_vim'
 Plug 'wakatime/vim-wakatime'
-
+Plug 'github/copilot.vim'
+Plug 'ianding1/leetcode.vim'
 
 call plug#end()
 
@@ -399,3 +400,11 @@ let g:neoformat_enabled_ocaml = ['ocamlformat']
 " Opam-Merlin
 
 nnoremap <leader>c :TComment<cr>
+
+" vim-leetcode
+let g:leetcode_solution_filetype = 'python3'
+let g:leetcode_browser = 'chrome'
+nnoremap <leader>ll :LeetCodeList<cr>
+nnoremap <leader>lt :LeetCodeTest<cr>
+nnoremap <leader>ls :LeetCodeSubmit<cr>
+nnoremap <leader>li :LeetCodeSignIn<cr>
