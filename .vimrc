@@ -341,6 +341,7 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
+highlight CocFloating ctermbg=black ctermfg=white
 " --------------------------------------------------------------------------------------
 
 " Tagbar
@@ -408,3 +409,4 @@ nnoremap <leader>ll :LeetCodeList<cr>
 nnoremap <leader>lt :LeetCodeTest<cr>
 nnoremap <leader>ls :LeetCodeSubmit<cr>
 nnoremap <leader>li :LeetCodeSignIn<cr>
+
