@@ -107,6 +107,7 @@ Plug 'tomtom/tcomment_vim'
 Plug 'wakatime/vim-wakatime'
 Plug 'github/copilot.vim'
 Plug 'ianding1/leetcode.vim'
+Plug 'NLKNguyen/papercolor-theme'
 
 call plug#end()
 
@@ -118,8 +119,8 @@ call plug#end()
 
 " wget -P ~/.vim/colors/ https://github.com/tomasr/molokai/raw/master/colors/molokai.vim
 
-syntax enable
-colorscheme molokai
+set background=dark
+colorscheme PaperColor
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " F10运行
@@ -409,4 +410,3 @@ nnoremap <leader>ll :LeetCodeList<cr>
 nnoremap <leader>lt :LeetCodeTest<cr>
 nnoremap <leader>ls :LeetCodeSubmit<cr>
 nnoremap <leader>li :LeetCodeSignIn<cr>
-
