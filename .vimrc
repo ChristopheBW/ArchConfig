@@ -108,6 +108,8 @@ Plug 'wakatime/vim-wakatime'
 Plug 'github/copilot.vim'
 Plug 'ianding1/leetcode.vim'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'wookayin/semshi', { 'do': ':UpdateRemotePlugins' }
+" Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 
@@ -410,3 +412,6 @@ nnoremap <leader>ll :LeetCodeList<cr>
 nnoremap <leader>lt :LeetCodeTest<cr>
 nnoremap <leader>ls :LeetCodeSubmit<cr>
 nnoremap <leader>li :LeetCodeSignIn<cr>
+
+" semshi
+nnoremap <leader>rr :Semshi rename 
