@@ -64,8 +64,7 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec alacritty
-bindsym $mod+Shift+Return exec termite
-bindsym $mod+Shift+f exec google-chrome-stable
+bindsym $mod+Shift+f exec microsoft-edge-stable
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -73,7 +72,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+c exec blurlock
 # start dmenu (a program launcher)
 bindsym $mod+d exec rofi -show drun -columns 3
-bindsym $mod+e exec dolphin
+bindsym $mod+e exec alacritty -e ranger
 
 bindsym Mod1+Tab workspace next
 bindsym Mod1+Shift+Tab workspace prev
@@ -214,4 +213,4 @@ new_float pixel 0
 gaps inner 6
 
 #exec --no-startup-id compton --config ~/.config/compton/compton.conf
-exec_always --no-startup-id feh --bg-fill ~/Pictures/WallPaper/greebles-render-cgi-3d-background-cyan-background-glowing-3840x2160-2196.jpg 
+exec_always --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/3d_cube_figure_dark_tunnel_backlight_wallpaper_background_4k_hd-3840x2160.jpg

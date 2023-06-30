@@ -109,6 +109,7 @@ Plug 'github/copilot.vim'
 Plug 'ianding1/leetcode.vim'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'wookayin/semshi', { 'do': ':UpdateRemotePlugins' }
+" Plug 'm4xshen/autoclose.nvim'
 " Plug 'sheerun/vim-polyglot'
 
 call plug#end()
@@ -344,7 +345,7 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
-highlight CocFloating ctermbg=black ctermfg=white
+highlight CocFloating ctermbg=grey ctermfg=white
 " --------------------------------------------------------------------------------------
 
 " Tagbar
