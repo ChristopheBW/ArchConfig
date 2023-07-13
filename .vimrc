@@ -105,7 +105,7 @@ Plug 'ap/vim-css-color'
 Plug 'sbdchd/neoformat'
 Plug 'tomtom/tcomment_vim'
 Plug 'wakatime/vim-wakatime'
-Plug 'github/copilot.vim'
+" Plug 'github/copilot.vim'
 Plug 'ianding1/leetcode.vim'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'wookayin/semshi', { 'do': ':UpdateRemotePlugins' }
@@ -416,3 +416,4 @@ nnoremap <leader>li :LeetCodeSignIn<cr>
 
 " semshi
 nnoremap <leader>rr :Semshi rename 
+
