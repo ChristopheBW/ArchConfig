@@ -1,85 +1,80 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 通用设置
+" General settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let mapleader = ","      " 定义<leader>键
-set nocompatible         " 设置不兼容原始vi模式
-filetype on              " 设置开启文件类型侦测
-filetype plugin on       " 设置加载对应文件类型的插件
-set noeb                 " 关闭错误的提示
-syntax enable            " 开启语法高亮功能
-syntax on                " 自动语法高亮
-set t_Co=256             " 开启256色支持
-set cmdheight=2          " 设置命令行的高度
-set showcmd              " select模式下显示选中的行数
-set ruler                " 总是显示光标位置
-set laststatus=2         " 总是显示状态栏
-set number               " 开启行号显示
-set relativenumber       " 开启相对行号
-set cursorline           " 高亮显示当前行
-set mouse=a              "设置可以在VIM使用鼠标
-set ttimeoutlen=0        " 设置<ESC>键响应时间
+let mapleader = ","      " Define <leader> key
+set nocompatible         " Set non-compatible with the original vi mode
+filetype on              " Set to enable file type detection
+filetype plugin on       " Set to load plugins corresponding to file type
+set noeb                 " Turn off error prompts
+syntax enable            " Enable syntax highlighting
+syntax on                " Automatic syntax highlighting
+set t_Co=256             " Enable 256 color support
+set cmdheight=2          " Set command line height
+set showcmd              " Show the number of lines selected in select mode
+set ruler                " Always show cursor position
+set laststatus=2         " Always display status bar
+set number               " Enable line number display
+set relativenumber       " Enable relative line number
+set cursorline           " Highlight the current line
+set mouse=a              " Set to use mouse in VIM
+set ttimeoutlen=0        " Set <ESC> key response time
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 代码缩进和排版
+" Code indentation and formatting
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set autoindent           " 设置自动缩进
-set cindent              " 设置使用C/C++语言的自动缩进方式
-set cinoptions=g0,:0,N-s,(0    " 设置C/C++语言的具体缩进方式
-set smartindent          " 智能的选择对其方式
-filetype indent on       " 自适应不同语言的智能缩进
-set expandtab            " 将制表符扩展为空格
-set tabstop=4            " 设置编辑时制表符占用空格数
-set shiftwidth=4         " 设置格式化时制表符占用空格数
-set softtabstop=4       " 设置4个空格为制表符
-set smarttab             " 在行和段开始处使用制表符
-" set nowrap               " 禁止折行
-set backspace=2          " 使用回车键正常处理indent,eol,start等
-set sidescroll=10        " 设置向右滚动字符数
-set nofoldenable         " 禁用折叠代码
+set autoindent           " Set automatic indentation
+set cindent              " Set to use C/C++ automatic indentation
+set cinoptions=g0,:0,N-s,(0    " Set specific indentation method for C/C++
+set smartindent          " Intelligent selection of alignment method
+filetype indent on       " Automatically adapt intelligent indentation for different languages
+set expandtab            " Expand tab character to spaces
+set tabstop=4            " Set the number of spaces a tab occupies during editing
+set shiftwidth=4         " Set the number of spaces a tab occupies when formatting
+set softtabstop=4       " Set 4 spaces as a tab
+set smarttab             " Use tab at the beginning of lines and paragraphs
+" set nowrap               " Disable line wrap
+set backspace=2          " Use the return key to normally handle indent, eol, start, etc.
+set sidescroll=10        " Set the number of characters to scroll to the right
+set nofoldenable         " Disable code folding
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 代码补全
+" Code completion
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set wildmenu             " vim自身命名行模式智能补全
-set completeopt-=preview " 补全时不显示窗口，只显示补全列表
+set wildmenu             " Smart completion of vim's own command line mode
+set completeopt-=preview " Do not display window when completing, only display completion list
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 搜索设置
+" Search settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set hlsearch            " 高亮显示搜索结果
-set incsearch           " 开启实时搜索功能
-set ignorecase          " 搜索时大小写不敏感
+set hlsearch            " Highlight search results
+set incsearch           " Enable real-time search
+set ignorecase          " Case insensitive during search
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 缓存设置
+" Buffer settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set nobackup            " 设置不备份
-set noswapfile          " 禁止生成临时文件
-set autoread            " 文件在vim之外修改过，自动重新读入
-set autowrite           " 设置自动保存
-set confirm             " 在处理未保存或只读文件的时候，弹出确认
+set nobackup            " Set not to backup
+set noswapfile          " Disable generation of temporary files
+set autoread            " If file is modified outside vim, automatically read again
+set autowrite           " Set to auto-save
+set confirm             " When dealing with unsaved or read-only files, pop up for confirmation
 
-" 自动打开上次位置
+" Automatically open at the last position
 if has("autocmd")                                                          
     au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 编码设置
+" Encoding settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set langmenu=zh_CN.UTF-8
-set helplang=cn
 set termencoding=utf-8
 set encoding=utf8
 set fileencodings=utf8,ucs-bom,gbk,cp936,gb2312,gb18030
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 插件列表
+" Plugin list
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 安装vim-plug
-" sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-" 
-" OR
+" Install vim-plug
 "
 " curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 " ln -s ~/.vim ~/.config/nvim 
@@ -90,6 +85,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'Yggdroot/LeaderF'
 Plug 'chxuan/vim-buffer'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'preservim/tagbar'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
@@ -100,77 +96,66 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
 Plug 'terryma/vim-smooth-scroll'
-" Plug 'stevearc/vim-arduino'
 Plug 'ap/vim-css-color'
 Plug 'sbdchd/neoformat'
 Plug 'tomtom/tcomment_vim'
 Plug 'wakatime/vim-wakatime'
-" Plug 'github/copilot.vim'
+Plug 'github/copilot.vim'
 Plug 'ianding1/leetcode.vim'
 Plug 'NLKNguyen/papercolor-theme'
-Plug 'wookayin/semshi', { 'do': ':UpdateRemotePlugins' }
-" Plug 'm4xshen/autoclose.nvim'
-" Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 配色设置
+" Color scheme settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" wget -P ~/.vim/colors/ https://github.com/sickill/vim-monokai/raw/master/colors/monokai.vim
-
-" wget -P ~/.vim/colors/ https://github.com/tomasr/molokai/raw/master/colors/molokai.vim
-
 set background=dark
 colorscheme PaperColor
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" F10运行
+" F10 to run
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <F10> :call CompileRunGcc()<CR>
 
 func! CompileRunGcc()
-    exec "w"
     if &filetype == 'c'
         exec 'te clang % -o %< && ./%< ; rm %<'
-        exec 'startinsert'
-        "exec 'te time ./%<'
     elseif &filetype == 'cpp'
         exec 'te clang++ % -o %< && ./%< ; rm %<'
-        exec 'startinsert'
-        "exec 'te time ./%<'
     elseif &filetype == 'rust'
         exec 'te rustc % && ./%< ; rm %<'
-        exec 'startinsert'
     elseif &filetype == 'java'
         exec 'te javac % && java %< ; rm *.class'
-        exec 'startinsert'
-        "exec 'te time ./%<'
     elseif &filetype == 'python'
         exec 'te python3 %'
-        exec 'startinsert'
-        "exec '!time python3 %'
     elseif &filetype == 'ocaml'
         exec 'te ocaml %'
-        exec 'startinsert'
-    elseif &filetype == 'arduino'
-        exec 'te arduino --upload %'
-        exec 'startinsert'
-        "exec 'te time ./%<'
     elseif &filetype == 'sh'
         :!time bash %
     endif
+    exec 'startinsert'
 endfunc
 
-:tnoremap <Esc> <C-\><C-n>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Leader key settings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Set leader key
+nnoremap <leader>f :LeaderfFile ~<cr>
+
+let g:Lf_WildIgnore = {
+            \ 'dir': ['.svn','.git','.hg','.vscode','.wine','.deepinwine','.oh-my-zsh'],
+            \ 'file': ['*.sw?','~$*','*.bak','*.exe','*.o','*.so','*.py[co]']
+            \}
+let g:Lf_UseCache = 0
+
+" Copy to system clipboard
 noremap <Leader>yg :%y+<CR>
 noremap <Leader>yy "+y<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 插件设置
+" Plugin settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " airline
@@ -192,7 +177,7 @@ nnoremap <silent> <leader>d :CloseBuffer<cr>
 nnoremap <silent> <leader>D :BufOnly<cr>
 
 " nerdtree
-nnoremap <silent> <F2> :NERDTreeToggle<cr>
+nnoremap <silent> <F2> :silent! NERDTreeToggle<cr>
 let g:NERDTreeFileExtensionHighlightFullName = 1
 let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
@@ -200,6 +185,28 @@ let g:NERDTreeHighlightFolders = 1
 let g:NERDTreeHighlightFoldersFullName = 1 
 let g:NERDTreeDirArrowExpandable='▷'
 let g:NERDTreeDirArrowCollapsible='▼'
+
+" nerdtree-git-plugin
+let g:NERDTreeGitStatusIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ 'Ignored'   : '☒',
+    \ "Unknown"   : "?"
+    \ }
+
+" Tagbar
+nnoremap <silent> <F3> :TagbarToggle<cr>
+let g:tagbar_autofocus = 1
+
+" tabular
+nnoremap <leader>l :Tab /\|<cr>
+nnoremap <leader>= :Tab /=<cr>
 
 " --------------------------------------------------------------------------------------
 " Plug COC
@@ -238,6 +245,11 @@ set signcolumn=yes
 	\ <SID>check_back_space() ? "\<Tab>" :
 	\ coc#refresh()
   inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+" Make <CR> to accept selected completion item or notify coc.nvim to format
+" <C-g>u breaks current undo, please make your own choice
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " !---------------------------!
 " Add the following line in :CocConfig
@@ -348,37 +360,11 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 highlight CocFloating ctermbg=grey ctermfg=white
 " --------------------------------------------------------------------------------------
 
-" Tagbar
-nnoremap <silent> <F3> :TagbarToggle<cr>
-let g:tagbar_autofocus = 1
-
 " vim-markdown
 let g:markdown_enable_spell_checking = 0
 "let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_frontmatter = 1
 "set conceallevel=2
-
-" nerdtree-git-plugin
-let g:NERDTreeGitStatusIndicatorMapCustom = {
-    \ "Modified"  : "✹",
-    \ "Staged"    : "✚",
-    \ "Untracked" : "✭",
-    \ "Renamed"   : "➜",
-    \ "Unmerged"  : "═",
-    \ "Deleted"   : "✖",
-    \ "Dirty"     : "✗",
-    \ "Clean"     : "✔︎",
-    \ 'Ignored'   : '☒',
-    \ "Unknown"   : "?"
-    \ }
-
-" LeaderF
-nnoremap <leader>f :LeaderfFile ~<cr>
-let g:Lf_WildIgnore = {
-            \ 'dir': ['.svn','.git','.hg','.vscode','.wine','.deepinwine','.oh-my-zsh'],
-            \ 'file': ['*.sw?','~$*','*.bak','*.exe','*.o','*.so','*.py[co]']
-            \}
-let g:Lf_UseCache = 0
 
 " vim-arduino
 let g:arduino_dir = "/usr/share/arduino/"
@@ -403,7 +389,6 @@ let g:neoformat_enabled_ocaml = ['ocamlformat']
 
 
 " Opam-Merlin
-
 nnoremap <leader>c :TComment<cr>
 
 " vim-leetcode
@@ -414,6 +399,19 @@ nnoremap <leader>lt :LeetCodeTest<cr>
 nnoremap <leader>ls :LeetCodeSubmit<cr>
 nnoremap <leader>li :LeetCodeSignIn<cr>
 
-" semshi
-nnoremap <leader>rr :Semshi rename 
+" copilot
+" use right arrow to accept suggestion
+" imap <silent><script><expr> <Right> copilot#Accept("\<CR>")
+" imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
+" let g:copilot_no_tab_map = v:true
+
+" nvim-treesitter
+" enable highlighting for all file types
+lua << EOF
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
+  },
+}
+EOF
 
