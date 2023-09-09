@@ -180,7 +180,7 @@ alias gpush='git add . && git commit -m "Sync" && git push'
 alias hg='cd $HOME/blog && python3 HexoSourceSync.py && hexo clean && hexo g && hexo d && git pull && git add . && git commit -m "Sync" && git push'
 alias hs='cd $HOME/blog && python3 HexoSourceSync.py $$ hexo clean && hexo g && hexo s && git pull && git add . && git commit -m "Sync" && git push'
 alias weather='curl "wttr.in/Ottawa?Fpq"'
-alias aptupgrade='sudo apt update && sudo apt upgrade'
+alias allupgrade='sudo apt update && sudo apt upgrade -y && rustup update && nvim -c "PlugUpgrade | PlugUpdate | qa" && omz update'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
