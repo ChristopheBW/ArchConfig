@@ -118,12 +118,13 @@ colorscheme PaperColor
 map <F10> :call CompileRunGcc()<CR>
 
 func! CompileRunGcc()
+    exec "w"
     if &filetype == 'c'
         exec 'te clang % -o %< && ./%< ; rm %<'
     elseif &filetype == 'cpp'
         exec 'te clang++ % -o %< && ./%< ; rm %<'
     elseif &filetype == 'rust'
-        exec 'te rustc % && ./%< ; rm %<'
+        exec 'te cargo run'
     elseif &filetype == 'java'
         exec 'te javac % && java %< ; rm *.class'
     elseif &filetype == 'python'
@@ -402,8 +403,16 @@ nnoremap <leader>li :LeetCodeSignIn<cr>
 " copilot
 " use right arrow to accept suggestion
 " imap <silent><script><expr> <Right> copilot#Accept("\<CR>")
-" imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
-" let g:copilot_no_tab_map = v:true
+imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
+let g:copilot_no_tab_map = v:true
+
+" wsl
+if system('uname -r') =~ "microsoft"
+  augroup Yank
+  autocmd!
+  autocmd TextYankPost * :call system('/mnt/c/windows/system32/clip.exe ',@")
+  augroup END
+endif
 
 " nvim-treesitter
 " enable highlighting for all file types
