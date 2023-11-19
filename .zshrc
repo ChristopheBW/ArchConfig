@@ -183,12 +183,12 @@ alias weather='curl "wttr.in/Ottawa?Fpq"'
 alias allupgrade='sudo apt update && sudo apt upgrade -y && rustup update && nvim -c "PlugUpgrade | PlugUpdate | qa" && omz update'
 
 # GPG
+export GPG_TTY=$(tty)
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
 
 # WSL
 if [ -f /proc/sys/fs/binfmt_misc/WSLInterop ]; then
-    export GPG_TTY="$(tty)"
     alias gpg="gpg.exe"
     alias ssh="ssh.exe"
     alias ssh-add='ssh-add.exe'
