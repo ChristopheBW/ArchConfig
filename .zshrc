@@ -182,6 +182,21 @@ alias hs='cd $HOME/blog && python3 HexoSourceSync.py $$ hexo clean && hexo g && 
 alias weather='curl "wttr.in/Ottawa?Fpq"'
 alias allupgrade='sudo apt update && sudo apt upgrade -y && rustup update && nvim -c "PlugUpgrade | PlugUpdate | qa" && omz update'
 
+# GPG
+export GPG_TTY="$(tty)"
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
+
+# WSL
+if [ -f /proc/sys/fs/binfmt_misc/WSLInterop ]; then
+    alias gpg="gpg.exe"
+    alias ssh="ssh.exe"
+    alias ssh-add='ssh-add.exe'
+    export GIT_SSH=ssh.exe
+fi
+
+
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
