@@ -117,8 +117,8 @@ export EDITOR='nvim'
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LC_ALL=en_US.UTF-8  
-# export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8  
+export LANG=en_US.UTF-8
 #export LANG=zh_CN.UTF-8
 #export LANGUAGE=zh_CN:en_US
 
@@ -183,12 +183,12 @@ alias weather='curl "wttr.in/Ottawa?Fpq"'
 alias allupgrade='sudo apt update && sudo apt upgrade -y && rustup update && nvim -c "PlugUpgrade | PlugUpdate | qa" && omz update'
 
 # GPG
-export GPG_TTY="$(tty)"
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
 
 # WSL
 if [ -f /proc/sys/fs/binfmt_misc/WSLInterop ]; then
+    export GPG_TTY="$(tty)"
     alias gpg="gpg.exe"
     alias ssh="ssh.exe"
     alias ssh-add='ssh-add.exe'
