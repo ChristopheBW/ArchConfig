@@ -117,8 +117,9 @@ export EDITOR='nvim'
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-export LC_ALL=en_US.UTF-8  
-export LANG=en_US.UTF-8
+export LC_ALL=en_CA.UTF-8  
+export LANG=en_CA.UTF-8
+export LANGUAGE=en_CA.UTF-8
 #export LANG=zh_CN.UTF-8
 #export LANGUAGE=zh_CN:en_US
 
@@ -172,15 +173,13 @@ export LANG=en_US.UTF-8
 #bindkey -s "^[Oo" "/"
 
 alias ls='lsd'
-alias tt='taskwarrior-tui'
 alias vim="nvim"
 alias vi='nvim'
 alias rmclass="rm *.class"
-alias gpush='git add . && git commit -m "Sync" && git push'
+alias gpush='git add . && git commit -m "SYNC" && git push'
 alias hg='cd $HOME/blog && python3 HexoSourceSync.py && hexo clean && hexo g && hexo d && git pull && git add . && git commit -m "Sync" && git push'
 alias hs='cd $HOME/blog && python3 HexoSourceSync.py $$ hexo clean && hexo g && hexo s && git pull && git add . && git commit -m "Sync" && git push'
-alias weather='curl "wttr.in/Ottawa?Fpq"'
-alias allupgrade='sudo apt update && sudo apt upgrade -y && rustup update && nvim -c "PlugUpgrade | PlugUpdate | qa" && omz update'
+alias allupgrade='sudo apt update && sudo apt upgrade -y || rustup update || nvim -c "PlugUpgrade | PlugUpdate | qa" || omz update'
 
 # GPG
 export GPG_TTY=$(tty)
